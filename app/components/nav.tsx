@@ -94,7 +94,7 @@ export default function Nav() {
 										? 'opacity-50 text-white hover:text-green-400'
 										: 'text-green-200'
 								}`}>
-								<Link href={route.path}>{route.name}</Link>
+								<Link href={route.path} onClick={()=> setMenuOpen(false)}>{route.name}</Link>
 							</li>
 						))}
 					</div>
