@@ -19,7 +19,7 @@ export async function POST( req: Request, res: Response ) {
     // Set up email data with unicode symbols
     const mailOptions = {
       from: `${name} <${email}>`,
-      to: 'jusi.monteiro@protonmail.com',
+      to: process.env.MY_EMAIL,
       subject: 'New Contact Form Submission',
       text: message,
     };
