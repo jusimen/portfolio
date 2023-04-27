@@ -33,6 +33,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
+    
     <html lang="en" className={`${plexMono.variable} ${plexSans.variable} ${silkscreen.variable}`}>
       <body className='bg-neutral-900 h-screen p-4 flex flex-col items-center font-display'>
         <Nav/>
