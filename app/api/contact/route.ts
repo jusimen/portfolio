@@ -1,5 +1,18 @@
 import nodemailer from 'nodemailer';
 
+export const config = {
+  api: {
+    bodyParser: {
+      sizeLimit: '1mb',
+    },
+    cors: {
+      origin: ['www.https://jusi.vercel.app'],
+      methods: ['POST'],
+    },
+  },
+};
+
+
 export async function POST( req: Request, res: Response ) {
   
     const {email, name, message} = await req.json();
@@ -26,7 +39,7 @@ export async function POST( req: Request, res: Response ) {
 
     // Send email with defined transport object
     try {
-      // await transporter.sendMail(mailOptions);
+      await transporter.sendMail(mailOptions);
       return new Response('Email sent successfully', { status: 200 })
     } catch (error) {
       console.error('Error sending email:', error);
